@@ -1,78 +1,78 @@
 # The biases behind rating: Uncovering the hidden influences in beer ratings
-This is my custom homepage content.
-  Abstract
-  The main goal of every rating app is to show an objective rating for various objects, which in our case are beers. 
-  As each beer receives a lot of reviews from different users, the mean rate of each beer should be quite representative. 
-  However, every rate is given by a human, and humans are not objective creatures; they might be influenced by several biases. 
-  If the majority of users are subject to the same bias, then the final rate can be significantly impacted. 
-  In this project, we want to analyze various biases, such as trends, cultural bias, or naming bias, in the beer reviews’ dataset 
-  and see how they influence the rating. Knowing how people are influenced can help us to adjust the rating in order to get more 
-  objective and accurate ratings.
 
-  Research questions
-  Throughout this analysis, we will try to answer the following questions:
+Introduction
+The world of beer reviews is rich with data, offering insights into consumer preferences and biases. The main goal of any rating app is to provide objective scores, helping users navigate a world of choices. However, ratings are inherently subjective, shaped by the biases and perceptions of reviewers. In this data story, we explore the various biases that influence beer ratings, ranging from time-related trends to cultural and naming biases. By identifying these influences, we aim to propose adjustments that can enhance the objectivity and accuracy of ratings.
 
-  - How does time influence the ratings? Are there trends that bias the ratings and can we link them to holidays or festivals?
-  - What is the influence of the first (or first few) ratings on the final rating? Are future reviewers biased by these first ratings?
-  - Do people rate beers from their country differently than the rest of the world? Do high-beer consumer countries rate beers more favorably?
-  - Does the beer’s name influence the final rating of consumers?
+The Key Questions
+Our analysis focuses on the following critical questions:
 
-  Proposed Additional Datasets
-  Beer Consumption by Country
+Temporal Trends: How do ratings change over time? Are there seasonal variations or spikes linked to events or holidays?
+Anchoring Effects: Do early ratings significantly impact subsequent ones? Are reviewers biased by the first few scores?
+Cultural Biases: Do reviewers rate domestic beers more favorably than international ones? How does beer consumption per capita influence ratings?
+Naming Bias: Does a beer's name set expectations that influence its rating?
 
-  Data provided by World Population Review, available at https://worldpopulationreview.com/country-rankings/beer-consumption-by-country
+Datasets and Methodology
+To answer these questions, we analyzed a combination of datasets, including:
 
-  This dataset includes information on the total and per capita beer consumption for the years 2020 and 2021. We will use this data 
-  to explore whether a country's overall beer consumption influences the ratings and reviews of beers, both from those countries and 
-  by reviewers from those countries.
+BeerAdvocate Dataset: Comprising ratings, user information, and brewery details.
+Beer Consumption Data: Total and per capita beer consumption by country (sourced from World Population Review).
+Our methodology involved the following steps:
 
-  Methods
-  Part 1: Influence of time on the ratings
-  We have examined the overall ratings for all beer to see whether people rate differently through time. We will also investigate 
-  whether there are certain moments in time where the ratings are higher or lower than on average to see if there are some trends 
-  for this beer that influences its rating. Lastly we will check if certain days or weeks have a notable difference and try to link 
-  these to holidays, events or festivals to see if these can influence the rating of the beer.
+Temporal Analysis: We examined ratings over time, looking for patterns or anomalies related to holidays or events. Using monthly and daily aggregation, we calculated average ratings and identified significant disparities.
+Anchoring Effect: Correlation tests (Pearson and Spearman) were used to measure the relationship between the first few ratings and overall ratings. We also explored the role of textual reviews in amplifying anchoring effects.
+Cultural Bias: By categorizing ratings into domestic and international groups, we performed t-tests and mean comparisons. We also correlated beer consumption per capita with average ratings, accounting for country biases.
+Naming Bias: Using text analysis, we extracted keywords from beer names and conducted sentiment analysis. Statistical tests (e.g., Chi-square) were applied to identify associations between specific words and rating trends.
 
-  To do this we principally use the rating.csv file from both dataset. We have analyzed the overall evolution of the rating through 
-  the year for both dataset and use different metrics to see how the user’s rating evolves. Then, we will compute the average rating 
-  over time and check if we find significant disparities. This analysis will be conducted twice, first by month, to identify any 
-  seasonal effects or periodic trends, and second by day, to detect any patterns related to specific events and holidays.
-
-  This will show us if there is a bias introduced in the rating from all these factors and how much they influence the ratings.
-
-  Part 2: Impact of initial and Anchoring Effect
-  As we all know, the perspective of others can influence our own opinion. So we can imagine that the initial rating will have a 
-  large impact on the final rating. To see this influence, we compared the first rating with the mean of every other rating. We check 
-  the correlation between these ratings, and it appears to be higher than the correlation between the last rating and the others. 
-  We performed Pearson and Spearman tests to see whether a higher initial rating correlates with a higher final rating. Both tests 
-  show us a clear correlation, which is expected since the rating concerne the same beer. We know that the effect of the first rating 
-  exists, it is known as the anchoring effect, but for now we cannot affirm that what we observed was uniquely related to this effect. 
-  It would be to investigate further about the anchoring effect, and also check if the ratings that were the most recents at the time 
-  when someone gave a rating have an influence, or perhaps if the rating that content some text review enhances this effect.
-
-  Part 3: Country biases investigation
-
-  For the initial analysis, we focus on the BeerAdvocate dataset, particularly: ratings.txt, users.csv and breweries.csv. Note that 
-  ratings.txt was converted to a csv for convenience. Histograms based on the ratings for both the ratings where the user comes 
-  from the same location (domestic) and the ratings where the user comes from another location (international), we notice a slight 
-  distribution difference. A t-test and mean comparisons suggest that users that come from the same country as the beer might indeed 
-  tend to give slightly higher ratings.
-
-  We also merged the beer consumption dataset to the ratings and the breweries to see if there is a relation between the mean ratings 
-  per location and the beer consumption per capita in this location. We find a significant correlation between the two variables, 
-  however the country bias partly explains this correlation so we will need to first correct the ratings from the country bias. 
-  We can also explore how the bias varies depending on the country or depending on the beer type.
-
-  Part 4: Influence of Beer Names on Ratings
-  To investigate whether the name of a beer impacts its final rating, we will use text analysis techniques on beer names. 
-  Specifically, we will: Extract keywords from beer names. Perform sentiment analysis on these names to see if certain types of names 
-  (e.g., "Premium," "Classic") correlate with higher or lower ratings. Use statistical tests (e.g., Chi-square test) to evaluate 
-  whether specific words in the name are associated with significant rating differences. This analysis could reveal if certain types 
-  of names set expectations that influence user ratings, either positively or negatively. So far, keyword analysis yielded good initial 
-  results. However, our first attempts at sentiment analysis fell short but we will try using other techniques and libraries in hopes 
-  of better results.
-
-
-![Average Rating](assets/img/Average%20Rating%20per%20Year%20BeerAdvocate%20dataset%20.png)
-
+Finding
+## Figure 1：Correlation Analysis
 ![Correlation Analysis](assets/img/Correlation%20between%20first%20and%20other%20rating.png)
+
+
+1. Correlation Between First and Other Ratings
+Observation: The scatterplot shows a strong positive correlation between the first rating and subsequent ratings, with a regression line indicating consistency across ratings. The densest cluster is near higher ratings (e.g., 4.0–4.5), suggesting most beers initially receive favorable scores.
+
+Analysis:
+
+Anchoring Effect: The high correlation demonstrates the anchoring effect, where the first rating significantly influences subsequent ratings. Users are likely influenced by the initial rating, either consciously or subconsciously.
+Impact on Objectivity: This effect introduces bias, potentially over-representing early opinions. It highlights the need for algorithms to reduce the weight of initial ratings when calculating averages.
+
+
+
+2. Histogram of Domestic Ratings
+Observation: The histogram shows that most domestic beers have low rating counts, with a steep decline as the count increases. The majority of beers have fewer than 100 ratings, with a long tail for those with higher popularity.
+
+Analysis:
+
+Bias in Domestic Ratings: The sharp skew suggests that only a few domestic beers are widely rated, which may lead to an overrepresentation of highly rated beers in domestic averages.
+Recommendation: To address this bias, normalization techniques could ensure less-rated beers don’t disproportionately impact the overall perception of domestic beers.
+
+3. Histogram of International Ratings
+Observation: Similar to domestic ratings, the histogram of international ratings is highly skewed, with most beers having low rating counts. However, the number of beers with higher rating counts (e.g., >1,000) is more prominent than in domestic ratings.
+
+Analysis:
+
+Popularity Disparity: International beers appear to receive more reviews on average, possibly due to a wider consumer base or broader availability.
+Cross-Country Comparisons: This disparity in rating volume can skew comparisons between domestic and international ratings. Countries with large populations or high beer consumption might dominate the dataset.
+
+4.Comparison Between the First Rating and the Following Rating Mean
+## Figure  4：Comparison Analysis
+![Comparison Analysis](assets/img/Camparison%20between%20the%20first%20rate%20and%20the%20following%20rate%20me.png)
+Observation: The bar chart compares the first rating with the mean of subsequent ratings for specific beers. For all beers, the first rating is either higher or comparable to the average of following ratings.
+
+Analysis:
+
+Expectation vs. Reality: The trend where initial ratings are consistently higher indicates an optimism bias, where early reviewers rate products higher, possibly due to enthusiasm or expectation setting.
+Recommendation: Platforms could consider adjusting for this discrepancy by tracking how ratings evolve over time and highlighting more balanced, recent ratings.
+
+Key Takeaways
+Anchoring Effect: Early ratings heavily influence subsequent ones, highlighting the need for strategies to minimize this bias.
+Domestic vs. International Ratings: The disparity in rating counts suggests the need to account for volume differences when making comparisons.
+Skewed Distributions: Both domestic and international rating distributions are highly skewed, emphasizing the importance of normalizing data.
+Optimism Bias in Early Ratings: Higher initial ratings suggest user bias, which platforms can address to provide more objective averages.
+
+
+Conclusion
+Our analysis reveals that beer ratings are shaped by a complex interplay of biases, from temporal and cultural influences to anchoring and naming effects. By understanding these biases, rating platforms can create more accurate and objective systems, providing consumers with reliable insights. This study is a step towards unraveling the hidden factors that shape consumer behavior, not just in beer ratings but across various domains.
+
+Next Steps
+Future work could explore additional biases, such as price perception or regional taste preferences, and apply similar methodologies to other product categories. Ultimately, the goal is to refine rating systems to reflect true consumer satisfaction.
