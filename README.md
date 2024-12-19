@@ -27,6 +27,12 @@ Finding
 
 
 1: Average Rating per Year (Ratebeer Dataset)
+## Figure 1 ：Ratebeer Dataset
+The chart below shows the average beer rating trends from the Ratebeer dataset. It indicates a steady increase in ratings over time, reflecting improvements in beer quality or changing consumer preferences.
+
+![Average Rating per Year (Ratebeer Dataset)](assets/img/Average%20Rateing%20per%20Year%20Ratebeer.png)
+
+
 Observation:
 The chart shows that the average rating starts at around 3.25 in the year 2000, then experiences a slight drop before steadily increasing over time. By 2017, the average rating reaches approximately 3.40, indicating a clear upward trend.
 
@@ -37,6 +43,10 @@ Initial Dip: The small dip in early years (2000–2002) may reflect stricter rat
 Industry Evolution: This trend aligns with the growth of the craft beer industry, which gained popularity in the mid-2000s, potentially contributing to higher ratings as more unique and quality beers entered the market.
 
 2: Average Rating per Year (BeerAdvocate Dataset)
+## Figure 2：BeerAdvocate Dataset
+The chart below illustrates the average beer ratings from the BeerAdvocate dataset. While it shows some fluctuations in early years, there is a noticeable upward trend in ratings after 2005.
+
+![Average Rating per Year (BeerAdvocate Dataset)](assets/img/Average%20Rating%20per%20Year%20BeerAdvocate%20dataset%20.png)
 Observation:
 The chart begins with an average rating near 3.85 in 1995. A significant spike occurs around 2000, where the average rating exceeds 4.0, followed by a sharp decline to below 3.75. After 2005, ratings gradually rise again, reaching over 3.95 by 2017.
 
@@ -52,9 +62,10 @@ The Ratebeer dataset shows a more consistent trend, with smaller deviations and 
 
 
 
+
+3. Correlation Between First and Other Ratings
 ## Figure 3：Correlation Analysis
 ![Correlation Analysis](assets/img/Correlation%20between%20first%20and%20other%20rating.png)
-3. Correlation Between First and Other Ratings
 Observation: The scatterplot shows a strong positive correlation between the first rating and subsequent ratings, with a regression line indicating consistency across ratings. The densest cluster is near higher ratings (e.g., 4.0–4.5), suggesting most beers initially receive favorable scores.
 
 Analysis:
