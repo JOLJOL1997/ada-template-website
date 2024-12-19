@@ -111,7 +111,7 @@ International beers exhibit a broader distribution, with many beers receiving **
 ### **4. Naming Bias**
 
 #### **Figure 6: Comparison Analysis**
-![Comparison Analysis](assets/img/Camparison%20between%20the%20first%20rate%20and%20the%20following%20rate%20me.png)
+![Comparison Analysis](assets/img/Camparison.png)
 
 **Observation**:  
 First ratings are consistently higher than subsequent averages, indicating **optimism bias**.
