@@ -9,22 +9,7 @@ description: >
   and see how they influence the rating. Knowing how people are influenced can help us to adjust the rating in order to get more 
   objective and accurate ratings.
 
-  Research questions
-  Throughout this analysis, we will try to answer the following questions:
 
-  - How does time influence the ratings? Are there trends that bias the ratings and can we link them to holidays or festivals?
-  - What is the influence of the first (or first few) ratings on the final rating? Are future reviewers biased by these first ratings?
-  - Do people rate beers from their country differently than the rest of the world? Do high-beer consumer countries rate beers more favorably?
-  - Does the beer’s name influence the final rating of consumers?
-
-  Proposed Additional Datasets
-  Beer Consumption by Country
-
-  Data provided by World Population Review, available at https://worldpopulationreview.com/country-rankings/beer-consumption-by-country
-
-  This dataset includes information on the total and per capita beer consumption for the years 2020 and 2021. We will use this data 
-  to explore whether a country's overall beer consumption influences the ratings and reviews of beers, both from those countries and 
-  by reviewers from those countries.
   
 show_downloads: true
 navigation:
