@@ -17,9 +17,9 @@ In this data story, we explore the various biases that influence beer ratings, r
 
 Our analysis focuses on the following critical questions:
 
-1. **Temporal Trends**: How do ratings change over time? Are there seasonal variations or spikes linked to events or holidays?
-2. **Anchoring Effects**: Do early ratings significantly impact subsequent ones? Are reviewers biased by the first few scores?
-3. **Cultural Biases**: Do reviewers rate domestic beers more favorably than international ones? How does beer consumption per capita influence ratings?
+1. **Temporal Trends**: How do ratings change over time? Are there seasonal variations or spikes linked to events or holidays?  
+2. **Anchoring Effects**: Do early ratings significantly impact subsequent ones? Are reviewers biased by the first few scores?  
+3. **Cultural Biases**: Do reviewers rate domestic beers more favorably than international ones? How does beer consumption per capita influence ratings?  
 4. **Naming Bias**: Does a beer's name set expectations that influence its rating?
 
 ---
@@ -27,14 +27,14 @@ Our analysis focuses on the following critical questions:
 ## **Datasets and Methodology**
 
 ### **Datasets**
-1. **BeerAdvocate Dataset**: Comprising ratings, user information, and brewery details.
-2. **Beer Consumption Data**: Total and per capita beer consumption by country (sourced from World Population Review).
+1. **BeerAdvocate Dataset**: Comprising ratings, user information, and brewery details.  
+2. **Beer Consumption Data**: Total and per capita beer consumption by country (sourced from World Population Review).  
 
 ### **Methodology**
-- **Temporal Analysis**: We examined ratings over time, looking for patterns or anomalies related to holidays or events. Using monthly and yearly aggregations, we calculated average ratings and identified significant disparities.
-- **Anchoring Effect**: Correlation tests (Pearson and Spearman) were used to measure the relationship between the first few ratings and overall ratings.
-- **Cultural Bias**: Ratings were categorized into domestic and international groups, with t-tests and mean comparisons performed. We correlated beer consumption per capita with average ratings.
-- **Naming Bias**: Text analysis was used to extract keywords from beer names. Statistical tests (e.g., Chi-square) identified associations between specific words and rating trends.
+- **Temporal Analysis**: Ratings were aggregated by month and year to identify patterns and trends.  
+- **Anchoring Effect**: Correlation tests (Pearson and Spearman) were used to evaluate the relationship between early and subsequent ratings.  
+- **Cultural Bias**: Domestic and international ratings were compared using t-tests and mean comparisons, and their correlation with beer consumption was assessed.  
+- **Naming Bias**: Text analysis and Chi-square tests were used to evaluate the impact of beer names on ratings.
 
 ---
 
@@ -46,12 +46,12 @@ Our analysis focuses on the following critical questions:
 ![Average Rating per Year (Ratebeer Dataset)](assets/img/Average%20Rateing%20per%20Year%20Ratebeer.png)
 
 **Observation**:  
-The chart shows the average rating starts at **3.25** in 2000, dips slightly, and then steadily increases, reaching **3.40** by 2017.
+The average rating starts at **3.25** in 2000, dips slightly, and then steadily increases, reaching **3.40** by 2017.
 
 **Analysis**:  
-- **Upward Trend**: Ratings increase over the years, suggesting improvements in beer quality or shifts in consumer behavior.
-- **Initial Dip**: Early ratings (2000–2002) may reflect stricter evaluations or fewer beer options.
-- **Industry Evolution**: The rise of craft beer in the mid-2000s likely contributed to higher ratings.
+- **Upward Trend**: Consistent increases in ratings suggest improving beer quality or shifting consumer expectations.  
+- **Initial Dip**: Early ratings reflect stricter evaluations or limited beer variety.  
+- **Industry Growth**: The rise of craft beer in the mid-2000s likely contributed to higher ratings.
 
 ---
 
@@ -59,12 +59,12 @@ The chart shows the average rating starts at **3.25** in 2000, dips slightly, an
 ![Average Rating per Year (BeerAdvocate Dataset)](assets/img/Average%20Rating%20per%20Year%20BeerAdvocate%20dataset%20.png)
 
 **Observation**:  
-The chart shows a spike in ratings around 2000 (>4.0), followed by a sharp decline, and a steady upward trend after 2005.
+A spike in 2000 (rating > 4.0) is followed by a sharp decline, with steady growth post-2005.
 
 **Analysis**:  
-- **Sharp Spike**: The unusually high rating in 2000 may reflect a small sample size or generous early users.
-- **Decline and Recovery**: Ratings drop as more beers are rated but recover post-2005, reflecting better beer quality.
-- **Comparison**: The BeerAdvocate dataset exhibits more fluctuations than the Ratebeer dataset.
+- **Spike in 2000**: Early adopters may have rated generously, or the sample size was small.  
+- **Recovery**: Ratings post-2005 reflect better beer quality and consumer preferences.  
+- **Comparison**: BeerAdvocate data exhibits more fluctuations than Ratebeer.
 
 ---
 
@@ -74,37 +74,37 @@ The chart shows a spike in ratings around 2000 (>4.0), followed by a sharp decli
 ![Correlation Analysis](assets/img/Correlation%20between%20first%20and%20other%20rating.png)
 
 **Observation**:  
-The scatterplot shows a **strong positive correlation** between first and subsequent ratings, with a densest cluster near **4.0–4.5**.
+There is a **strong positive correlation** between the first and subsequent ratings, with most values clustered near **4.0–4.5**.
 
 **Analysis**:  
-- **Anchoring Effect**: Early ratings heavily influence subsequent reviews, introducing bias.
-- **Impact on Objectivity**: This bias over-represents early opinions, suggesting a need to reduce the weight of initial ratings.
+- **Anchoring Effect**: Early ratings heavily influence subsequent ones.  
+- **Impact on Objectivity**: Over-representation of early opinions biases averages.
 
 ---
 
 ### **3. Cultural Bias**
 
 #### **Figure 4: Histogram of Domestic Ratings**
-![Histogram of Domestic Ratings](assets/img/Histogram%20of%20Domestic%20Ratings.png)
+![Histogram of Domestic Ratings](assets/img/Domestic%20Rating.png)
 
 **Observation**:  
-Most domestic beers have fewer than **100 ratings**, with a long tail for highly rated beers.
+Most domestic beers have fewer than **100 ratings**, with a steep decline and a long tail for popular beers.
 
 **Analysis**:  
-- **Bias in Domestic Ratings**: A few popular domestic beers dominate the average.
-- **Recommendation**: Normalization techniques can ensure fair representation for less-rated beers.
+- **Bias in Domestic Ratings**: A few highly rated beers dominate the average.  
+- **Recommendation**: Normalize data to account for less-rated beers.
 
 ---
 
 #### **Figure 5: Histogram of International Ratings**
-![Histogram of International Ratings](assets/img/Histogram%20of%20International%20Ratings.png)
+![Histogram of International Ratings](assets/img/International%20Rating.png)
 
 **Observation**:  
-International beers have a broader distribution, with more beers receiving **>1,000 ratings** compared to domestic beers.
+International beers exhibit a broader distribution, with many beers receiving **>1,000 ratings**.
 
 **Analysis**:  
-- **Popularity Disparity**: International beers have a wider consumer base, leading to more reviews.
-- **Cross-Country Comparisons**: Rating volume differences highlight the need for normalization across countries.
+- **Popularity Disparity**: International beers have a wider consumer base.  
+- **Recommendation**: Normalize data to enable fair comparisons between domestic and international ratings.
 
 ---
 
@@ -114,27 +114,32 @@ International beers have a broader distribution, with more beers receiving **>1,
 ![Comparison Analysis](assets/img/Camparison%20between%20the%20first%20rate%20and%20the%20following%20rate%20me.png)
 
 **Observation**:  
-The first rating is consistently higher than the mean of subsequent ratings, indicating an **optimism bias**.
+First ratings are consistently higher than subsequent averages, indicating **optimism bias**.
 
 **Analysis**:  
-- **Expectation vs. Reality**: Early reviewers may give higher ratings due to enthusiasm or appealing beer names.
-- **Recommendation**: Platforms could anonymize beer names for early reviewers to reduce this bias.
+- **Expectation vs. Reality**: Higher initial ratings reflect enthusiasm or positive impressions from beer names.  
+- **Recommendation**: Platforms could anonymize beer names during early reviews to reduce bias.
 
 ---
 
 ## **Key Insights**
+
 1. **Temporal Trends**:  
-   - Both datasets show an upward trend in ratings, influenced by industry growth and consumer preferences.
+   - Both datasets show an upward trend in ratings over time, influenced by industry growth and consumer preferences.  
+
 2. **Anchoring Effect**:  
-   - Early ratings strongly bias overall scores, requiring adjusted weightings for objectivity.
+   - Early ratings bias subsequent reviews, requiring adjusted weightings for objectivity.  
+
 3. **Cultural Bias**:  
-   - Domestic beers are rated more favorably, reflecting cultural preferences. Normalization is necessary for fair comparisons.
+   - Domestic beers receive more favorable ratings, reflecting cultural preferences.  
+
 4. **Naming Bias**:  
-   - Optimistic early ratings are influenced by beer names, suggesting anonymization as a solution.
+   - Optimistic early ratings may be driven by beer names, suggesting anonymization as a potential solution.
 
 ---
 
 ## **Conclusion**
 
-This analysis reveals that beer ratings are shaped by multiple biases, including temporal trends, anchoring effects, cultural preferences, and naming influences. Addressing these biases through normalization, weighting adjustments, and anonymization can lead to more objective ratings, benefiting both consumers and breweries.
+This analysis reveals multiple biases influencing beer ratings, including temporal trends, anchoring effects, cultural preferences, and naming influences. Addressing these biases through normalization, weighting adjustments, and anonymization can lead to more objective and reliable ratings, ultimately benefiting consumers and breweries alike.
 
+---
