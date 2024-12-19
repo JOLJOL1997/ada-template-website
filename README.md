@@ -1,4 +1,4 @@
-# Welcome to My Page
+# The biases behind rating: Uncovering the hidden influences in beer ratings
 This is my custom homepage content.
   Abstract
   The main goal of every rating app is to show an objective rating for various objects, which in our case are beers. 
