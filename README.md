@@ -71,3 +71,8 @@ This is my custom homepage content.
   of names set expectations that influence user ratings, either positively or negatively. So far, keyword analysis yielded good initial 
   results. However, our first attempts at sentiment analysis fell short but we will try using other techniques and libraries in hopes 
   of better results.
+
+
+![Average Rating](assets/img/Average%20Rating%20per%20Year%20BeerAdvocate%20dataset%20.png)
+
+![Correlation Analysis](assets/img/Correlation%20between%20first%20and%20other%20rating.png)
